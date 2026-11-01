@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John Viterbs A. Galicia | Computer Engineering & Hardware Firmware Specialist</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Animated Circuit Background Canvas -->
+  <canvas id="circuit-canvas"></canvas>
+
+  <div class="app-container">
+    
+    <!-- LEFT SIDEBAR DASHBOARD -->
+    <aside class="sidebar-card">
+      <div class="profile-section">
+        <div class="avatar-wrapper">
+          <img src="assets/img/profile/hero-photo.jpg" alt="John Viterbs A. Galicia" onerror="this.src='https://via.placeholder.com/120/0f172a/00f2fe?text=JVG'">
+          <span class="status-indicator" title="Available for Hardware & Firmware Consultations"></span>
+        </div>
+        <h2 class="profile-name">John Viterbs A. Galicia</h2>
+        <p class="profile-role">Computer Engineering Specialist</p>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="sidebar-nav">
+        <a href="#hero" class="nav-item active"><i class="fa-solid fa-house"></i> Overview</a>
+        <a href="#skills" class="nav-item"><i class="fa-solid fa-microchip"></i> Tech & Hardware Stack</a>
+        <a href="#projects" class="nav-item"><i class="fa-solid fa-screwdriver-wrench"></i> Projects & Builds</a>
+        <a href="#terminal" class="nav-item"><i class="fa-solid fa-terminal"></i> CLI Terminal</a>
+        <a href="#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i> Education & Credentials</a>
+        <a href="#contact" class="nav-item"><i class="fa-solid fa-envelope"></i> Contact</a>
+      </nav>
+
+      <!-- Sidebar Action Buttons -->
+      <div class="sidebar-actions">
+        <a href="#contact" class="btn btn-purple"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
+        <button onclick="openModal()" class="btn btn-dark"><i class="fa-solid fa-file-pdf"></i> View NC II / Resume</button>
+        <a href="assets/docs/NCII_Certificate.pdf" download class="btn btn-outline-sm"><i class="fa-solid fa-download"></i> Download Resume</a>
+      </div>
+    </aside>
+
+    <!-- RIGHT MAIN CONTENT PANEL -->
+    <main class="main-content">
+      
+      <!-- HERO / INTRODUCTION SECTION -->
+      <section id="hero" class="content-section glass-panel hero-panel">
+        <span class="welcome-tag"><i class="fa-solid fa-bolt"></i> SYSTEM HARDWARE & FIRMWARE SPECIALIST</span>
+        <h1 class="main-heading">
+          Computer Engineer.<br>
+          Expert in <span class="gradient-text">Hardware Repair, Firmware Flashing</span> & Embedded Systems.
+        </h1>
+        <p class="hero-description">
+          4th-year BS Computer Engineering undergraduate at <strong>Bestlink College of the Philippines</strong>. Specializing in FPV drone assembly & flight controller reprogramming (KK2.1.5 Plus), component-level micro-soldering, PC/mobile firmware unbricking (MTKClient, SP Flash Tool, avrdude), thermal optimization, and full-stack IoT development.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn btn-purple"><i class="fa-solid fa-microchip"></i> View Hardware Builds</a>
+          <button onclick="openModal()" class="btn btn-dark"><i class="fa-solid fa-certificate"></i> View Credentials</button>
+          <a href="assets/docs/NCII_Certificate.pdf" download class="btn btn-outline-sm"><i class="fa-solid fa-download"></i> Download Resume</a>
+        </div>
+      </section>
+
+      <!-- TECHNICAL STACK & SPECIALIZATIONS -->
+      <section id="skills" class="content-section glass-panel">
+        <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> Technical Capabilities & Diagnostics Stack</h2>
+        
+        <div class="skills-filter">
+          <button class="filter-btn active" onclick="filterSkills('all')">All Capabilities</button>
+          <button class="filter-btn" onclick="filterSkills('hardware')">Soldering & Repair</button>
+          <button class="filter-btn" onclick="filterSkills('fpv')">FPV & Robotics</button>
+          <button class="filter-btn" onclick="filterSkills('firmware')">Firmware & OS</button>
+          <button class="filter-btn" onclick="filterSkills('software')">Software & Tools</button>
+        </div>
+
+        <div class="skills-grid">
+          
+          <!-- FPV Drone & FC Flashing -->
+          <div class="skill-box" data-category="fpv">
+            <i class="fa-solid fa-plane-fly skill-icon"></i>
+            <h4>FPV Drone Engineering & FC Reprogramming</h4>
+            <p>Custom 3"/4" quadcopter assembly, KK2.1.5 & KK2.1.5 Plus flight controller firmware reprogramming, RadioMaster ELRS (EdgeTX) pairing, 20A ESC calibration, and LiPo battery power management.</p>
+          </div>
+
+          <!-- Soldering & Desoldering -->
+          <div class="skill-box" data-category="hardware">
+            <i class="fa-solid fa-fire-flame-curved skill-icon"></i>
+            <h4>Precision Soldering & Desoldering</h4>
+            <p>Component-level electronic micro-soldering, SMD rework, REAIM T12 station operation, ShortSaver smoke stopper testing, and Samwa YX-360TRN multimeter circuit tracing.</p>
+          </div>
+
+          <!-- PC Troubleshooting, Formatting & Tweaking -->
+          <div class="skill-box" data-category="firmware">
+            <i class="fa-solid fa-gears skill-icon"></i>
+            <h4>PC Troubleshooting & Performance Tweaks</h4>
+            <p>Full hardware diagnostics, clean OS re-formatting (Tiny11/Windows), registry tweakings, custom 24V cooling fan rig integration, thermal putty/paste application, and ThrottleStop tuning.</p>
+          </div>
+
+          <!-- Mobile & Microcontroller Firmware -->
+          <div class="skill-box" data-category="firmware">
+            <i class="fa-solid fa-mobile-screen-button skill-icon"></i>
+            <h4>Firmware Unbricking & Bootloaders</h4>
+            <p>MTKClient, SP Flash Tool, USBasp, avrdude toolchain, bootloader restoration for ATmega328P/644PA, ESP32 microcontrollers, and Android smartphone recovery.</p>
+          </div>
+
+          <!-- Microcontrollers & IoT -->
+          <div class="skill-box" data-category="fpv">
+            <i class="fa-solid fa-microchip skill-icon"></i>
+            <h4>Microcontrollers & IoT Systems</h4>
+            <p>ESP32, ESP32-S3, Raspberry Pi 4, ATmega644PA, ATmega328P, RS485 Modbus NPK soil sensors, BME280 microclimate sensors, Firebase Realtime Database, and Blynk IoT.</p>
+          </div>
+
+          <!-- Software & CAD -->
+          <div class="skill-box" data-category="software">
+            <i class="fa-solid fa-laptop-code skill-icon"></i>
+            <h4>Engineering Software & CAD Suite</h4>
+            <p>Proteus 8 ISIS simulation, Cisco Packet Tracer, AutoCAD 2027 LT, AutoLISP mechanical scripting, Python (OpenCV computer vision), C/C++, HTML5/CSS3, and JavaScript.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- FEATURED PROJECTS SHOWCASE -->
+      <section id="projects" class="content-section glass-panel">
+        <h2 class="section-title"><i class="fa-solid fa-screwdriver-wrench"></i> Hardware Builds, Capstones & Software Systems</h2>
+        
+        <div class="projects-grid">
+          
+          <!-- KK2.1.5 Plus FPV Quadcopter -->
+          <div class="project-card">
+            <span class="project-category">FPV Aviation</span>
+            <h3>KK2.1.5 Plus FPV Quadcopter</h3>
+            <p>Custom built and flight-tested quadcopter featuring reprogrammed KK2.1.5 Plus flight controller, RadioMaster ELRS receiver, YSIDO motors, 20A ESCs, and balance charging rig.</p>
+            <div class="tech-tags">
+              <span>KK2.1.5 Plus</span><span>RadioMaster ELRS</span><span>EdgeTX</span><span>Soldering</span>
+            </div>
+          </div>
+
+          <!-- AeroSphere -->
+          <div class="project-card">
+            <span class="project-category">Thesis Capstone</span>
+            <h3>AeroSphere Controller System</h3>
+            <p>Automated microclimate regulation & dynamic transpiration controller for Sweet Basil using Raspberry Pi 4, ESP32, RS485 Modbus NPK sensors, BME280, Blynk, and Firebase.</p>
+            <div class="tech-tags">
+              <span>Raspberry Pi 4</span><span>ESP32</span><span>RS485 Modbus</span><span>Firebase</span>
+            </div>
+          </div>
+
+          <!-- Spidey Hexapod -->
+          <div class="project-card">
+            <span class="project-category">Robotics Build</span>
+            <h3>Spidey 18-Servo Hexapod</h3>
+            <p>3-DOF 18-servo hexapod robot controlled by ESP32 microcontrollers via PCA9685 PWM drivers configured for inverse kinematics locomotion gaits.</p>
+            <div class="tech-tags">
+              <span>ESP32</span><span>PCA9685</span><span>Servo Kinematics</span><span>3-DOF</span>
+            </div>
+          </div>
+
+          <!-- PC Diagnostics & Thermal Tuning -->
+          <div class="project-card">
+            <span class="project-category">Hardware Optimization</span>
+            <h3>PC Diagnostics & Thermal Tuning</h3>
+            <p>Full hardware overhaul, clean OS re-formatting, registry performance tweaks, external 24V cooling fan rig, and high-viscosity thermal putty/paste application.</p>
+            <div class="tech-tags">
+              <span>Hardware Diagnostics</span><span>Thermal Putty</span><span>ThrottleStop</span><span>OS Formatting</span>
+            </div>
+          </div>
+
+          <!-- VAELON Security Vault -->
+          <div class="project-card">
+            <span class="project-category">IoT Security Vault</span>
+            <h3>VAELON Anti-Theft Vault</h3>
+            <p>Reinforced concrete structure vault powered by ESP32, keypad authentication, relay-controlled solenoid lock, I2C LCD, and Blynk IoT mobile app triggers.</p>
+            <div class="tech-tags">
+              <span>ESP32</span><span>Relay Solenoid</span><span>Keypad Security</span><span>I2C LCD</span>
+            </div>
+          </div>
+
+          <!-- LabReserve System -->
+          <div class="project-card">
+            <span class="project-category">Computer Vision System</span>
+            <h3>LabReserve Laboratory System</h3>
+            <p>Computer laboratory reservation management platform for Bestlink College featuring live camera face recognition, sound warnings, and EmailJS automated alerts.</p>
+            <div class="tech-tags">
+              <span>Python OpenCV</span><span>Firebase</span><span>EmailJS</span><span>Web App</span>
+            </div>
+          </div>
+
+          <!-- WalletCrocs E-Wallet -->
+          <div class="project-card">
+            <span class="project-category">Full-Stack Web App</span>
+            <h3>WalletCrocs Ledger & E-Wallet</h3>
+            <p>Web-based e-wallet platform featuring Firebase Authentication, Realtime Database, EmailJS receipt generation, P2P transfers, and administrative control panel deployed on Vercel.</p>
+            <div class="tech-tags">
+              <span>Firebase</span><span>JavaScript</span><span>Vercel</span><span>EmailJS</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- INTERACTIVE CLI TERMINAL -->
+      <section id="terminal" class="content-section glass-panel">
+        <h2 class="section-title"><i class="fa-solid fa-terminal"></i> Interactive Diagnostic CLI Console</h2>
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="terminal-buttons">
+              <span class="btn-close"></span>
+              <span class="btn-min"></span>
+              <span class="btn-max"></span>
+            </div>
+            <div class="terminal-title">jvg-cpe-diagnostic-cli v1.0.4</div>
+          </div>
+          <div class="terminal-body" id="terminal-body">
+            <p class="term-text">Type <span class="term-highlight">'help'</span> to view available system commands.</p>
+          </div>
+          <div class="terminal-input-line">
+            <span class="prompt">cpe@galicia-sys:~$</span>
+            <input type="text" id="terminal-input" placeholder="enter command..." autofocus>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION & CREDENTIALS -->
+      <section id="education" class="content-section glass-panel">
+        <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education & Professional Credentials</h2>
+        <div class="timeline-container">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h4>BS Computer Engineering (4th Year)</h4>
+            <p class="institution">Bestlink College of the Philippines</p>
+            <p class="timeline-date">Present | Quezon City, Metro Manila</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h4>National Certificate II (NC II)</h4>
+            <p class="institution">TESDA Certified Hardware & Technical Diagnostics Specialist</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h4>Secondary Education</h4>
+            <p class="institution">Batasan Hills National High School / Senior High School</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="content-section glass-panel">
+        <h2 class="section-title"><i class="fa-solid fa-paper-plane"></i> Contact & Location</h2>
+        <div class="contact-details">
+          <p><i class="fa-solid fa-location-dot"></i> Batasan Hills, Quezon City, Metro Manila, Philippines</p>
+          <p><i class="fa-solid fa-envelope"></i> johnviterbs.galicia@gmail.com</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- NC II / RESUME MODAL POPUP -->
+  <div id="resume-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content glass-panel">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-certificate"></i> NC II Certificate & Resume Credentials</h3>
+        <button onclick="closeModal()" class="close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <iframe src="assets/docs/NCII_Certificate.pdf" width="100%" height="500px"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Files -->
+  <script src="js/canvas-bg.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/terminal.js"></script>
+</body>
+</html>
