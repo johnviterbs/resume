@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John Viterbs A. Galicia | Computer Engineering Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Circuit Canvas Background -->
+  <canvas id="circuit-canvas"></canvas>
+
+  <div class="app-container">
+    
+    <!-- LEFT SIDEBAR DASHBOARD -->
+    <aside class="sidebar-card" id="sidebar">
+      <div class="profile-section">
+        <div class="avatar-wrapper">
+          <div class="ripple-ring"></div>
+          <img src="assets/img/profile/hero-photo.jpg" alt="John Viterbs A. Galicia" onerror="this.src='https://via.placeholder.com/120/0f172a/00f2fe?text=JVG'">
+        </div>
+        <h2 class="profile-name">John Viterbs A. Galicia</h2>
+        <p class="profile-role">Computer Engineering Specialist</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#hero" class="nav-item active"><i class="fa-solid fa-house"></i> Overview</a>
+        <a href="#skills" class="nav-item"><i class="fa-solid fa-layer-group"></i> Tech Stack</a>
+        <a href="#tools" class="nav-item"><i class="fa-solid fa-toolbox"></i> Tools & OS</a>
+        <a href="#projects" class="nav-item"><i class="fa-solid fa-code-branch"></i> Projects & App</a>
+        <a href="#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i> Education</a>
+        <a href="#contact" class="nav-item"><i class="fa-solid fa-envelope"></i> Contact</a>
+      </nav>
+
+      <div class="sidebar-actions">
+        <a href="#contact" class="btn btn-purple"><i class="fa-solid fa-paper-plane"></i> Contact me</a>
+        
+        <button onclick="openModal('assets/docs/John_Galicia_Resume.pdf', 'Professional Resume')" class="btn btn-dark"><i class="fa-solid fa-file-pdf"></i> View Resume</button>
+        <a href="assets/docs/John_Galicia_Resume.pdf" download class="btn btn-outline-sm"><i class="fa-solid fa-download"></i> Download Resume</a>
+        
+        <button onclick="openModal('assets/docs/NCII_Certificate.pdf', 'NC II Certificate')" class="btn btn-dark" style="margin-top: 5px;"><i class="fa-solid fa-certificate"></i> View NC II</button>
+        <a href="assets/docs/NCII_Certificate.pdf" download class="btn btn-outline-sm"><i class="fa-solid fa-download"></i> Download NC II</a>
+      </div>
+    </aside>
+
+    <!-- RIGHT MAIN CONTENT PANEL -->
+    <main class="main-content" id="main-content">
+      
+      <!-- HERO SECTION -->
+      <section id="hero" class="content-section glass-panel hero-panel">
+        <span class="welcome-tag">WELCOME TO MY PORTFOLIO</span>
+        <h1 class="main-heading">
+          Computer Engineer.<br>
+          Focused on <span class="gradient-text">Software, Hardware & Mobile IoT</span> Systems.
+        </h1>
+        <p class="hero-description">
+          4th-year BS Computer Engineering undergraduate at <strong>Bestlink College of the Philippines</strong>. Specializing in component-level micro-soldering, firmware unbricking, FPV drone assembly, Android Mobile App publishing (APKPure), and full-stack IoT microclimate systems.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn btn-purple"><i class="fa-solid fa-screwdriver-wrench"></i> View Capstone & App</a>
+          <button onclick="openModal('assets/docs/John_Galicia_Resume.pdf', 'Professional Resume')" class="btn btn-dark"><i class="fa-solid fa-file-pdf"></i> View Resume</button>
+        </div>
+      </section>
+
+      <!-- SKILLS SECTION -->
+      <section id="skills" class="content-section glass-panel">
+        <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> Tech Stack & Expertise</h2>
+        <div class="skills-grid">
+          
+          <!-- SKILL 1: FPV (32-38) -->
+          <div class="skill-box expandable-card">
+            <div class="project-header" onclick="toggleProject(this)">
+              <div>
+                <i class="fa-solid fa-plane-fly skill-icon"></i>
+                <h4>FPV Drone Engineering & FC Tuning</h4>
+                <p>Custom quadcopter assembly, Flight Controller firmware reprogramming, RadioMaster ELRS pairing, and ESC calibration.</p>
+              </div>
+              <i class="fa-solid fa-chevron-down expand-arrow"></i>
+            </div>
+            <div class="project-body-collapse">
+              <div class="proof-gallery">
+                <p class="proof-title"><i class="fa-solid fa-images"></i> Expertise Proof & Builds (Click photo to zoom):</p>
+                <div class="gallery-grid" data-folder="assets/img/skills/fpv" data-start="32" data-end="38"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SKILL 2: SOLDERING (24-31) -->
+          <div class="skill-box expandable-card">
+            <div class="project-header" onclick="toggleProject(this)">
+              <div>
+                <i class="fa-solid fa-fire-flame-curved skill-icon"></i>
+                <h4>Precision Soldering & Desoldering</h4>
+                <p>Component-level electronic micro-soldering, SMD rework, REAIM T12 station operation, and PCB circuit tracing.</p>
+              </div>
+              <i class="fa-solid fa-chevron-down expand-arrow"></i>
+            </div>
+            <div class="project-body-collapse">
+              <div class="proof-gallery">
+                <p class="proof-title"><i class="fa-solid fa-images"></i> Expertise Proof & Scope (Click photo to zoom):</p>
+                <div class="gallery-grid" data-folder="assets/img/skills/soldering" data-start="24" data-end="31"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SKILL 3: PC TROUBLESHOOTING (39-44) -->
+          <div class="skill-box expandable-card">
+            <div class="project-header" onclick="toggleProject(this)">
+              <div>
+                <i class="fa-solid fa-gears skill-icon"></i>
+                <h4>PC Troubleshooting & Performance</h4>
+                <p>Full hardware diagnostics, clean OS re-formatting, thermal management, and hardware stress testing.</p>
+              </div>
+              <i class="fa-solid fa-chevron-down expand-arrow"></i>
+            </div>
+            <div class="project-body-collapse">
+              <div class="proof-gallery">
+                <p class="proof-title"><i class="fa-solid fa-images"></i> Expertise Proof & Lab (Click photo to zoom):</p>
+                <div class="gallery-grid" data-folder="assets/img/skills/pc" data-start="39" data-end="44"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SKILL 4: ANDROID & FIRMWARE (59+) -->
+          <div class="skill-box expandable-card">
+            <div class="project-header" onclick="toggleProject(this)">
+              <div>
+                <i class="fa-solid fa-mobile-screen-button skill-icon"></i>
+                <h4>Android Publishing & Firmware Unbricking</h4>
+                <p>APKPure Console deployments, signed release APK generation, MTKClient, SP Flash Tool, and bootloader restoration.</p>
+              </div>
+              <i class="fa-solid fa-chevron-down expand-arrow"></i>
+            </div>
+            <div class="project-body-collapse">
+              <div class="proof-gallery">
+                <p class="proof-title"><i class="fa-solid fa-images"></i> Expertise Proof & Fastboot (Click photo to zoom):</p>
+                <div class="gallery-grid" data-folder="assets/img/skills/firmware" data-start="59" data-end="75"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SKILL 5: MICROCONTROLLERS (45-49) -->
+          <div class="skill-box expandable-card">
+            <div class="project-header" onclick="toggleProject(this)">
+              <div>
+                <i class="fa-solid fa-microchip skill-icon"></i>
+                <h4>Microcontrollers & IoT Systems</h4>
+                <p>ESP32, Raspberry Pi 3/4/5, RS485 Modbus NPK sensors, Firebase Realtime Database, and real-time telemetry.</p>
+              </div>
+              <i class="fa-solid fa-chevron-down expand-arrow"></i>
+            </div>
+            <div class="project-body-collapse">
+              <div class="proof-gallery">
+                <p class="proof-title"><i class="fa-solid fa-images"></i> Expertise Proof & Hardware (Click photo to zoom):</p>
+                <div class="gallery-grid" data-folder="assets/img/skills/iot" data-start="45" data-end="49"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SKILL 6: AI & BIOMETRIC (50-53) -->
+          <div class="skill-box expandable-card">
+            <div class="project-header" onclick="toggleProject(this)">
+              <div>
+                <i class="fa-solid fa-robot skill-icon"></i>
+                <h4>AI & Biometric Security Integration</h4>
+                <p>Android Studio development, Face ID liveness blink verification, automated email alerts, and Python scripting.</p>
+              </div>
+              <i class="fa-solid fa-chevron-down expand-arrow"></i>
+            </div>
+            <div class="project-body-collapse">
+              <div class="proof-gallery">
+                <p class="proof-title"><i class="fa-solid fa-images"></i> Expertise Proof & AI (Click photo to zoom):</p>
+                <div class="gallery-grid" data-folder="assets/img/skills/ai" data-start="50" data-end="53"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- TOOLS, OS & TECHNOLOGIES SECTION (CLEAN & EXPANDABLE ON CLICK) -->
+      <section id="tools" class="content-section glass-panel">
+        <h2 class="section-title"><i class="fa-solid fa-screwdriver-wrench"></i> Tools, Operating Systems & Technologies</h2>
+        <p class="hero-description" style="font-size: 0.95rem; margin-bottom: 20px;">
+          Click any card below to expand and view details on the development platforms, operating systems, flashing utilities, and AI workflows I have hands-on deployment experience with.
+        </p>
+
+        <div class="tools-container">
+          
+          <!-- CATEGORY 1: CORE DEVELOPMENT, CLOUD & ENGINEERING PLATFORMS -->
+          <h3 class="tools-subtitle"><i class="fa-solid fa-code" style="color: var(--cyan-glow);"></i> Core Technologies, Cloud & Engineering Platforms</h3>
+          <div class="tools-grid">
+            
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-c" style="color: #00599C;"></i>
+                <span>C / C++</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Low-level embedded programming language used for writing microcontroller firmware, sensor drivers, and real-time hardware control on ESP32 and Arduino.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-brands fa-python" style="color: #FFD43B;"></i>
+                <span>Python</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Used for Raspberry Pi edge automation, CNN computer vision leaf disease detection, OpenCV facial recognition, and backend utility scripting.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-brands fa-js" style="color: #F7DF1E;"></i>
+                <span>JavaScript</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Core scripting language for interactive web applications, real-time cloud telemetry dashboards, and client-side UI logic.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-brands fa-html5" style="color: #E34F26;"></i>
+                <span>HTML5 & CSS3</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Semantic web architecture and responsive modern styling for customer portals, e-wallet interfaces, and engineering portfolios.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-brands fa-php" style="color: #777BB4;"></i>
+                <span>PHP & MySQL</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Server-side backend scripting and relational database management (phpMyAdmin/XAMPP) used for full-stack management systems and user records.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-brands fa-raspberry-pi" style="color: #C51A4A;"></i>
+                <span>Raspberry Pi</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Single-board Linux computer utilized as an edge AI processor and main controller for microclimate image analysis and cloud syncing.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-microchip" style="color: #00979D;"></i>
+                <span>ESP32 / Arduino</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Wi-Fi and Bluetooth microcontrollers used for IoT sensor data acquisition, relay actuation, servo kinematics, and hardware automation.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-infinity" style="color: #00979D;"></i>
+                <span>Arduino IDE</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Embedded development environment used for writing, compiling, and uploading C/C++ sketches, managing board packages, and serial debugging.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-mobile-button" style="color: #23c48e;"></i>
+                <span>Blynk IoT</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>IoT cloud platform and mobile control interface used to build real-time remote hardware dashboards, notifications, and solenoid lock triggers.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-database" style="color: #FFCA28;"></i>
+                <span>Firebase Console</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Cloud backend management console for configuring Realtime Database, Authentication, and live synchronization between IoT hardware and mobile/web apps.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-triangle-exclamation" style="color: #ffffff;"></i>
+                <span>Vercel</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Cloud deployment and hosting platform used via CLI and Git integration to publish fast, production-ready web applications and portfolios.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-brands fa-github" style="color: #ffffff;"></i>
+                <span>GitHub</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Distributed version control and source code repository platform for managing software releases, collaborative builds, and continuous deployment.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-mobile-screen" style="color: #3ddc84;"></i>
+                <span>Android Studio</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Official IDE for developing, debugging, and compiling signed release Android APKs with biometric Face ID and IoT telemetry integration.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-brain" style="color: #38bdf8;"></i>
+                <span>Teachable Machine</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Google's web-based machine learning tool used to train, validate, and export custom image classification models for embedded vision projects.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-network-wired" style="color: #22d3ee;"></i>
+                <span>Cisco Packet Tracer</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Network simulation environment used to design, configure, and troubleshoot routing, switching, VLANs, and IP addressing topologies.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-diagram-project" style="color: #a855f7;"></i>
+                <span>Proteus & Cirkit</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Electronic circuit simulation and wiring schematic design tools used to verify microcontroller pinouts and voltage behavior before assembly.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-code" style="color: #007ACC;"></i>
+                <span>VS Code</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Primary lightweight code editor configured with PlatformIO, Python, and web development extensions for full-stack and embedded coding.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- CATEGORY 2: OPERATING SYSTEMS DEPLOYMENT & MOBILE FIRMWARE EXPERIENCE -->
+          <h3 class="tools-subtitle" style="margin-top: 35px;"><i class="fa-solid fa-desktop" style="color: #a855f7;"></i> Operating Systems Deployment & Firmware Experience</h3>
+          <div class="tools-grid">
+            
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-brands fa-windows" style="color: #00a4ef;"></i>
+                <span>Windows 7 / 8 / 8.1</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Hands-on installation, MBR/Legacy partitioning, driver configuration, and legacy hardware optimization across older desktop and laptop systems.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-brands fa-windows" style="color: #38bdf8;"></i>
+                <span>Windows 10 & 11</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Clean UEFI/GPT deployments, custom debloated builds, TPM/Secure Boot configuration, SSD migrations, and advanced system performance tuning.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-server" style="color: #60a5fa;"></i>
+                <span>Windows Server</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Server OS installation, Active Directory domain setup, DNS/DHCP configuration, local file sharing, and network administration labs.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-brands fa-ubuntu" style="color: #E95420;"></i>
+                <span>Ubuntu & Linux Mint</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Debian-based Linux installations, dual-boot setups, bash terminal administration, package management, and lightweight workstation recovery.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-brands fa-linux" style="color: #38bdf8;"></i>
+                <span>Kali Linux</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Security-focused Linux deployment and live USB environment used for network diagnostics, penetration testing labs, and command-line utilities.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-mobile-screen-button" style="color: #3b82f6;"></i>
+                <span>Samsung One UI OS</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Stock firmware flashing, binary/region updates, bootloop recovery, and system restoration across Samsung Galaxy devices using Odin.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-mobile-retro" style="color: #fb923c;"></i>
+                <span>Xiaomi MIUI / HyperOS</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Fastboot ROM flashing, bootloader management, custom recovery installation, and OS reinstallation on Xiaomi and Redmi smartphones.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-mobile" style="color: #22d3ee;"></i>
+                <span>Flyme OS</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Hands-on firmware installation, system recovery, and Android ROM troubleshooting on Meizu Flyme OS-powered mobile devices.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-brands fa-android" style="color: #3ddc84;"></i>
+                <span>itel OS (Android)</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Firmware restoration, ADB system optimization, and MediaTek/Unisoc partition recovery on itel Android smartphones.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- CATEGORY 3: FIRMWARE FLASHING, UNBRICKING & SYSTEM UTILITIES -->
+          <h3 class="tools-subtitle" style="margin-top: 35px;"><i class="fa-solid fa-screwdriver-wrench" style="color: #00f2fe;"></i> Firmware Flashing, Unbricking & System Utilities</h3>
+          <div class="tools-grid">
+            
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-helicopter" style="color: #38bdf8;"></i>
+                <span>KK2 Multicopter Flashtool</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>AVR programmer utility used via USBasp to flash, update, and restore custom quadcopter firmware onto KK2.1.5 Plus Flight Controllers.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-gamepad" style="color: #a855f7;"></i>
+                <span>EdgeTX Buddy</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Transmitter firmware flasher and ELRS configurator used to update and bind RadioMaster Pocket controllers with quadcopter receivers.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-microchip" style="color: #f97316;"></i>
+                <span>SP Flash Tool & MTKClient</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>MediaTek low-level flashing and BROM exploit utilities used to unbrick hard-bricked Android devices, bypass locks, and restore stock partitions.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-brands fa-android" style="color: #3ddc84;"></i>
+                <span>Odin Tool (Samsung)</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Official Samsung Download Mode flashing utility for installing stock firmware (AP/BL/CP/CSC), custom recoveries, and resolving bootloops.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-mobile-retro" style="color: #fb923c;"></i>
+                <span>Xiaomi MiFlash Tool</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Fastboot and EDL (Emergency Download Mode) flashing utility for restoring MIUI/HyperOS stock ROMs and recovering bricked Xiaomi/Redmi devices.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-terminal" style="color: #22d3ee;"></i>
+                <span>ADB & Fastboot</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Android Debug Bridge command-line tools for bootloader unlocking, partition flashing, system debloating, and kernel-level log debugging.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-brands fa-usb" style="color: #60a5fa;"></i>
+                <span>Rufus</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Bootable USB drive creation utility configured for UEFI/Legacy GPT/MBR Windows and Linux OS clean installations and rescue environments.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-hard-drive" style="color: #34d399;"></i>
+                <span>Hasleo WinToUSB / Disk</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Disk cloning, partition migration, and portable Windows deployment utility used during SSD upgrades and emergency system recovery.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-box-archive" style="color: #818cf8;"></i>
+                <span>DriverPack Solution</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Offline/online hardware driver repository used to automatically detect and install missing chipset, LAN, and USB serial drivers post-reformat.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-gauge-high" style="color: #f43f5e;"></i>
+                <span>Driver Booster & HWiNFO</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>System optimization suite combined with HWiNFO64 and ThrottleStop for hardware sensor telemetry, thermal throttling analysis, and CPU tuning.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- CATEGORY 4: AI-ASSISTED WORKFLOW TOOLS -->
+          <h3 class="tools-subtitle" style="margin-top: 35px;"><i class="fa-solid fa-wand-magic-sparkles" style="color: #c084fc;"></i> AI-Assisted Workflow Tools</h3>
+          <div class="tools-grid ai-grid">
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-robot" style="color: #10a37f;"></i>
+                <span>ChatGPT</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Used for rapid algorithm prototyping, code refactoring, and troubleshooting complex syntax across C++, Python, and JavaScript.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-brands fa-google" style="color: #4285F4;"></i>
+                <span>Google Gemini</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>System architecture planning, hardware-software integration debugging, technical documentation, and full-stack portfolio engineering.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-brain" style="color: #d97757;"></i>
+                <span>Claude</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>Deep codebase analysis, structured logic verification, and clean UI component generation.</p>
+              </div>
+            </div>
+
+            <div class="tool-card expandable-tool" onclick="toggleTool(this)">
+              <div class="tool-card-top">
+                <i class="fa-solid fa-cube" style="color: #ffffff;"></i>
+                <span>Blackbox AI</span>
+                <i class="fa-solid fa-chevron-down tool-arrow"></i>
+              </div>
+              <div class="tool-desc">
+                <p>In-editor code autocomplete and quick snippet generation during active VS Code development sessions.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PROJECTS SECTION -->
+      <section id="projects" class="content-section glass-panel">
+        <h2 class="section-title"><i class="fa-solid fa-code-branch"></i> Featured Capstone, Hardware & Software Projects</h2>
+        <div class="projects-grid">
+          
+          <!-- PROJECT 1: AEROSPHERE (14-17) -->
+          <div class="project-card expandable-card" style="border-color: var(--cyan-glow); background: rgba(0, 242, 254, 0.04);">
+            <div class="project-header" onclick="toggleProject(this)">
+              <div>
+                <span class="project-category">⭐ Featured Mobile App (APKPure Published)</span>
+                <h3>AeroSphere (GT Plant Care)</h3>
+                <p>Automated microclimate regulation & dynamic transpiration mobile app featuring Biometric Face ID security, real-time IoT Firebase telemetry, and APKPure release verification.</p>
+              </div>
+              <i class="fa-solid fa-chevron-down expand-arrow"></i>
+            </div>
+            <div class="project-body-collapse">
+              <div class="proof-gallery">
+                <p class="proof-title"><i class="fa-solid fa-images"></i> Project Proof & Screenshots (Click photo to zoom):</p>
+                <div class="gallery-grid" data-folder="assets/img/projects/aerosphere" data-start="14" data-end="17"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 2: AUTOGRAFT AI CONTROL & INCUBATION SYSTEM -->
+          <div class="project-card expandable-card" style="border-color: #10b981; background: rgba(16, 185, 129, 0.05);">
+            <div class="project-header" onclick="toggleProject(this)">
+              <div>
+                <span class="project-category" style="color: #10b981;">⭐ Embedded AI & Full-Stack IoT (BSCpE 41042)</span>
+                <h3>AutoGraft AI Control & Incubation System</h3>
+                <p>Automated seedling grafting and 21-day incubation control ecosystem combining CNN stem alignment vision, live temperature/humidity circular telemetry gauges, isolated multi-user Firebase RTDB sync, a native Android Kotlin app, and a Web Admin Command Center.</p>
+              </div>
+              <i class="fa-solid fa-chevron-down expand-arrow"></i>
+            </div>
+            <div class="project-body-collapse">
+              <div class="proof-gallery">
+                <p class="proof-title"><i class="fa-solid fa-images"></i> Project Proof & Screenshots (Click photo to zoom):</p>
+                <div class="gallery-grid" data-folder="assets/img/projects/autograft" data-start="1" data-end="4"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 3: FPV DRONE BUILD (1-3) -->
+          <div class="project-card expandable-card">
+            <div class="project-header" onclick="toggleProject(this)">
+              <div>
+                <span class="project-category">Aerial Robotics & FPV</span>
+                <h3>Custom 3" Quadcopter Drone Build</h3>
+                <p>Custom 3-inch 3S quadcopter powered by KK2.1.5 Plus FC, YSIDO 1607 2800KV motors, 20A ESCs, and RadioMaster Pocket ELRS control system.</p>
+              </div>
+              <i class="fa-solid fa-chevron-down expand-arrow"></i>
+            </div>
+            <div class="project-body-collapse">
+              <div class="proof-gallery">
+                <p class="proof-title"><i class="fa-solid fa-images"></i> Drone Assembly Proof (Click photo to zoom):</p>
+                <div class="gallery-grid" data-folder="assets/img/projects/drone" data-start="1" data-end="3"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 4: LABRESERVE (7-13) -->
+          <div class="project-card expandable-card">
+            <div class="project-header" onclick="toggleProject(this)">
+              <div>
+                <span class="project-category">Computer Vision</span>
+                <h3>LabReserve System</h3>
+                <p>Computer Laboratory Reservation System featuring camera face recognition and automated email warnings.</p>
+              </div>
+              <i class="fa-solid fa-chevron-down expand-arrow"></i>
+            </div>
+            <div class="project-body-collapse">
+              <div class="proof-gallery">
+                <p class="proof-title"><i class="fa-solid fa-images"></i> Project Proof & Screenshots (Click photo to zoom):</p>
+                <div class="gallery-grid" data-folder="assets/img/projects/labreserve" data-start="7" data-end="13"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 5: SMART BIO-POD (20-23) -->
+          <div class="project-card expandable-card">
+            <div class="project-header" onclick="toggleProject(this)">
+              <div>
+                <span class="project-category">Embedded Systems & IoT</span>
+                <h3>Smart Bio-Pod Prototype</h3>
+                <p>Automated smart bio-pod environmental monitoring and control system built for 3rd-year engineering evaluation.</p>
+              </div>
+              <i class="fa-solid fa-chevron-down expand-arrow"></i>
+            </div>
+            <div class="project-body-collapse">
+              <div class="proof-gallery">
+                <p class="proof-title"><i class="fa-solid fa-images"></i> Prototype Proof (Click photo to zoom):</p>
+                <div class="gallery-grid" data-folder="assets/img/projects/biopad" data-start="20" data-end="23"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 6: VAELON VAULT (4-6) -->
+          <div class="project-card expandable-card">
+            <div class="project-header" onclick="toggleProject(this)">
+              <div>
+                <span class="project-category">IoT Hardware</span>
+                <h3>VAELON Anti-Theft Vault</h3>
+                <p>ESP32 reinforced security vault with solenoid lock relay control, keypad, I2C LCD, and Blynk app integration.</p>
+              </div>
+              <i class="fa-solid fa-chevron-down expand-arrow"></i>
+            </div>
+            <div class="project-body-collapse">
+              <div class="proof-gallery">
+                <p class="proof-title"><i class="fa-solid fa-images"></i> Hardware & App Proof (Click photo to zoom):</p>
+                <div class="gallery-grid" data-folder="assets/img/projects/vaelon" data-start="4" data-end="6"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 7: WALLETCROCS (18-19) -->
+          <div class="project-card expandable-card">
+            <div class="project-header" onclick="toggleProject(this)">
+              <div>
+                <span class="project-category">Web Application</span>
+                <h3>WalletCrocs E-Wallet</h3>
+                <p>Web-based e-wallet and ledger platform featuring Firebase Auth, receipt generation, and P2P transfers.</p>
+              </div>
+              <i class="fa-solid fa-chevron-down expand-arrow"></i>
+            </div>
+            <div class="project-body-collapse">
+              <div class="proof-gallery">
+                <p class="proof-title"><i class="fa-solid fa-images"></i> Web UI Proof (Click photo to zoom):</p>
+                <div class="gallery-grid" data-folder="assets/img/projects/walletcrocs" data-start="18" data-end="19"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 8: RC CAR PROTOTYPE (54-58) -->
+          <div class="project-card expandable-card">
+            <div class="project-header" onclick="toggleProject(this)">
+              <div>
+                <span class="project-category">Embedded Robotics & Control</span>
+                <h3>Remote-Controlled (RC) Car Prototype</h3>
+                <p>Custom microcontroller-driven remote-controlled vehicle engineered with wireless motor control and chassis integration for 3rd-year academic evaluation.</p>
+              </div>
+              <i class="fa-solid fa-chevron-down expand-arrow"></i>
+            </div>
+            <div class="project-body-collapse">
+              <div class="proof-gallery">
+                <p class="proof-title"><i class="fa-solid fa-images"></i> RC Car Build Proof (Click photo to zoom):</p>
+                <div class="gallery-grid" data-folder="assets/img/projects/rccar" data-start="54" data-end="58"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 9: 2ND YEAR RESEARCH EXPO PROTOTYPE (59-61) -->
+          <div class="project-card expandable-card">
+            <div class="project-header" onclick="toggleProject(this)">
+              <div>
+                <span class="project-category">Engineering Research Expo (2nd Year)</span>
+                <h3>2nd Year Research Expo Prototype</h3>
+                <p>Early-stage hardware-software engineering prototype exhibited and defended during the 2nd-year academic research exposition.</p>
+              </div>
+              <i class="fa-solid fa-chevron-down expand-arrow"></i>
+            </div>
+            <div class="project-body-collapse">
+              <div class="proof-gallery">
+                <p class="proof-title"><i class="fa-solid fa-images"></i> Expo Presentation & Prototype Proof (Click photo to zoom):</p>
+                <div class="gallery-grid" data-folder="assets/img/projects/expo" data-start="59" data-end="61"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 10: RENTER & LANDLORD MANAGEMENT SYSTEM (62-64) -->
+          <div class="project-card expandable-card">
+            <div class="project-header" onclick="toggleProject(this)">
+              <div>
+                <span class="project-category">Full-Stack Database System (2nd Year)</span>
+                <h3>Renter & Landlord Management System</h3>
+                <p>First full-stack property and tenant management system developed in 2nd year, powered by a relational MySQL database (phpMyAdmin) for tracking units, leases, and payments.</p>
+              </div>
+              <i class="fa-solid fa-chevron-down expand-arrow"></i>
+            </div>
+            <div class="project-body-collapse">
+              <div class="proof-gallery">
+                <p class="proof-title"><i class="fa-solid fa-images"></i> Database & System Proof (Click photo to zoom):</p>
+                <div class="gallery-grid" data-folder="assets/img/projects/landlord" data-start="62" data-end="64"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- EDUCATION SECTION -->
+      <section id="education" class="content-section glass-panel">
+        <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education & Credentials</h2>
+        <div class="timeline-container">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h4>Bachelor of Science in Computer Engineering (4th Year)</h4>
+            <p class="institution">Bestlink College of the Philippines</p>
+            <p class="timeline-date">Present | Quezon City, Metro Manila</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h4>National Certificate II (NC II)</h4>
+            <p class="institution">TESDA Computer Systems Servicing - Technical Diagnostics Specialist</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <h4>Secondary Education</h4>
+            <p class="institution">Batasan Hills National High School / Senior High School</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="content-section glass-panel">
+        <span class="welcome-tag">CONTACT</span>
+        <h2 class="main-heading" style="font-size: 2.2rem; margin-bottom: 10px;">Let's start a professional conversation.</h2>
+        <p class="hero-description" style="font-size: 1rem; margin-bottom: 25px;">
+          For opportunities or project discussions, feel free to reach out directly through email or phone. You can also review my GitHub profile and download my credentials.
+        </p>
+
+        <div class="contact-grid">
+          <a href="tel:09934154105" class="contact-link-box">
+            <div class="contact-icon-title"><i class="fa-solid fa-phone"></i> Phone</div>
+            <div class="contact-value">09934154105 <i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          </a>
+          <a href="mailto:johnviterbs@gmail.com" class="contact-link-box">
+            <div class="contact-icon-title"><i class="fa-solid fa-envelope"></i> Email</div>
+            <div class="contact-value">johnviterbs@gmail.com <i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          </a>
+          <a href="https://github.com/johnviterbs" target="_blank" class="contact-link-box">
+            <div class="contact-icon-title"><i class="fa-brands fa-github"></i> GitHub</div>
+            <div class="contact-value">github.com/johnviterbs <i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          </a>
+        </div>
+
+        <div class="contact-actions" style="margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
+          <button onclick="openModal('assets/docs/John_Galicia_Resume.pdf', 'Professional Resume')" class="btn btn-purple"><i class="fa-solid fa-file-pdf"></i> View Resume</button>
+          <a href="assets/docs/John_Galicia_Resume.pdf" download class="btn btn-outline-sm"><i class="fa-solid fa-download"></i> Download Resume</a>
+          <button onclick="openModal('assets/docs/NCII_Certificate.pdf', 'NC II Certificate')" class="btn btn-dark"><i class="fa-solid fa-certificate"></i> View NC II</button>
+          <a href="assets/docs/NCII_Certificate.pdf" download class="btn btn-outline-sm"><i class="fa-solid fa-download"></i> Download NC II</a>
+        </div>
+      </section>
+
+      <!-- Spacer -->
+      <div style="height: 30vh;"></div>
+
+    </main>
+  </div>
+
+  <!-- DOCUMENT MODAL POPUP -->
+  <div id="resume-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content glass-panel">
+      <div class="modal-header">
+        <h3 id="modal-title"><i class="fa-solid fa-file"></i> Document Viewer</h3>
+        <div class="header-actions">
+          <button onclick="toggleFullScreen()" class="expand-btn" title="Full Screen"><i class="fa-solid fa-expand"></i></button>
+          <button onclick="closeModal()" class="close-btn" title="Close">&times;</button>
+        </div>
+      </div>
+      <div class="modal-body" id="modal-body-content"></div>
+    </div>
+  </div>
+
+  <script src="js/canvas-bg.js"></script>
+  <script src="js/main.js?v=4"></script>
+</body>
+</html>
